@@ -1,7 +1,7 @@
 #!/bin/zsh
 # vim: set filetype=zsh
 
-bindkey -v
+bindkey -e
 
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' group-name ''
