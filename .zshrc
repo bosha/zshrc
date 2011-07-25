@@ -12,4 +12,3 @@ do
     source $rc
 done
 unset rc
-

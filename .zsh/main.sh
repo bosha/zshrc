@@ -1,7 +1,7 @@
 #!/bin/zsh
 # vim: set filetype=zsh
 
-bindkey -e
+bindkey -v # vi-like bindings
 
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' group-name ''
@@ -24,3 +24,4 @@ zstyle ':completion:*:processes' sort false
 zstyle ':completion:*:processes-names' command 'ps xho command'
 
 setopt correctall
+setopt noflowcontrol
