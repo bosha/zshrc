@@ -9,7 +9,6 @@ alias mv='nocorrect mv --verbose --interactive'
 alias rm='nocorrect rm -Irv'
 
 alias grep='grep --color=always'
-#alias grep='grep --color=auto'
 
 alias du='du --human-readable --total'
 alias df='df --human-readable'
@@ -28,6 +27,7 @@ alias rm='rm -v'
 alias cp='cp -v'
 alias mv='mv -v'
 alias k='killall' 
+alias a='sudo aptitude'
  
 alias -s {avi,mpeg,mpg,mov,m2v}=smplayer
 alias -s {odt,doc,sxw,rtf}=openoffice.org
@@ -64,5 +64,6 @@ alias free="free -t -m"
 alias git="nocorrect git"
 
 alias scrot="scrot --border --count --quality 75 $HOME'/screenshots/%d-%b-%y_%H-%M-%S_\$wx\$h.png' --exec 'du -h \$f'"
+
 alias aptitude="sudo aptitude"
 alias ifconfig="sudo ifconfig"
