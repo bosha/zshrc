@@ -3,9 +3,6 @@
 
 ZDOTDIR=~/.zsh
 
-# Execute ~/.profile:
-#source ~/.profile
-
 # Load configuration:
 for rc in $ZDOTDIR/*.sh
 do
