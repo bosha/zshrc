@@ -1,6 +1,7 @@
 ## Installation ##
 
-    git://github.com/bosha/zshrc.git
+    cd /tmp
+    git clone git://github.com/bosha/zshrc.git
     cd zshrc
     mv .zshrc .zsh ~/
 
