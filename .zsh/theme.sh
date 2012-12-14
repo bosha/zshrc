@@ -6,6 +6,15 @@
 
 #PROMPT=$'\n\[\033[0;32m\]\u@\h \[\033[1;33m\]\w\n\[\033[0m\]> '
 
+# Colour less && man pages
+export LESS_TERMCAP_mb=$'\E[01;31m'       # Start blink text
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # Start bold text
+export LESS_TERMCAP_me=$'\E[0m'           # End bold text
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # Start text in infobox
+export LESS_TERMCAP_se=$'\E[0m'           # End text in infobox
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # Start of underline text
+export LESS_TERMCAP_ue=$'\E[0m'           # End of underline text
+
 # load some modules
 autoload -U colors zsh/terminfo # Used in the colour alias below
 colors
