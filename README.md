@@ -1,6 +1,6 @@
 ## Screenshot ##
 
-![Screenshot](https://github.com/bosha/zshrc/raw/master/img/screenshot.png)
+![Screenshot](https://github.com/bosha/zshrc/raw/master/screenshot.png)
 
 ## Installation ##
 
