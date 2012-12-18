@@ -20,8 +20,6 @@ export HISTTIMEFORMAT="%t%d.%m.%y %H:%M:%S%t"
 export HISTIGNORE="&:ls:[bf]g:exit"
 
 export PATH="$PATH:/home/$USER/bin" # add my bin path 
-export TERM="xterm-256color" # 256-colour terminal 
-
 export EDITOR="/usr/bin/vim"
 export PAGER='less'
 export VISUAL='vim'
