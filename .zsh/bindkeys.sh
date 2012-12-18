@@ -1,6 +1,8 @@
 #!/bin/zsh
 # vim: set filetype=zsh
 
+bindkey -v # vi-like bindings
+
 #ctrl-p ctrl-n history navigation
 #bindkey '^P' up-history
 #bindkey '^N' down-history
