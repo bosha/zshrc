@@ -53,3 +53,7 @@ alias ifconfig="sudo ifconfig"
 alias logo="exit"
 alias ex="exit"
 alias i="grep"
+
+# Inline aliases, zsh -g aliases can be anywhere in command line
+alias -g G='| grep -'
+alias -g L='| less'
