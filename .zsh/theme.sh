@@ -84,7 +84,7 @@ local current_dir='%{$PR_BOLD$PR_BLUE%}%~%{$PR_NO_COLOR%}'
 if [[ $(tty) == *pts* ]]; then
     export TERM="xterm-256color" # 256-colour terminal 
     PROMPT="╭─${user_host} ${current_dir}
-    ╰─$PR_PROMPT "
+╰─$PR_PROMPT "
     RPS1="${return_code}"
     zle -N zle-keymap-select
     zle -N zle-line-init
