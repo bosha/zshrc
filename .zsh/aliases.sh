@@ -55,5 +55,5 @@ alias ex="exit"
 alias i="grep"
 
 # Inline aliases, zsh -g aliases can be anywhere in command line
-alias -g G='| grep -'
+alias -g G='| grep -e'
 alias -g L='| less'
