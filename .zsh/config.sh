@@ -9,6 +9,8 @@ SAVEHIST=1000
 
 # Fish-like term highlighing
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 
 export BC_ENV_ARGS="--quiet --mathlib"
 
