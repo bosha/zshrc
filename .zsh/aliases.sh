@@ -28,9 +28,14 @@ if [ -f /usr/bin/grc ]; then
     alias head="grc head" 
 fi
 
+if which rsync >/dev/null; then
+    echo "using rsync for cp"
+    alias cp='rsync -aP'
+fi
+
 
 alias ls='ls --classify --color --human-readable --group-directories-first'
-alias cp='nocorrect cp --interactive --verbose --recursive --preserve=all'
+# alias cp='nocorrect cp --interactive --verbose --recursive --preserve=all'
 alias mv='nocorrect mv --verbose --interactive'
 alias rm='nocorrect rm -Irv'
 alias du='du --human-readable --total'
@@ -41,7 +46,6 @@ alias v='vim'
 alias sv='sudo vim'
 alias sk='sudo killall'
 alias rm='rm -v'
-alias cp='cp -v'
 alias mv='mv -v'
 alias k='killall' 
 alias killall="killall --interactive --verbose"
