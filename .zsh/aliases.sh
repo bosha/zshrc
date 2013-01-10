@@ -29,19 +29,19 @@ if [ -f /usr/bin/grc ]; then
 fi
 
 if which rsync >/dev/null; then
-    echo "using rsync for cp"
-    alias cp='rsync -aP'
+    alias rcp='rsync -aP'
 fi
 
 
 alias ls='ls --classify --color --human-readable --group-directories-first'
-# alias cp='nocorrect cp --interactive --verbose --recursive --preserve=all'
+alias cp='nocorrect cp --interactive --verbose --recursive --preserve=all'
 alias mv='nocorrect mv --verbose --interactive'
 alias rm='nocorrect rm -Irv'
+alias sudo='nocorrect sudo'
 alias du='du --human-readable --total'
 alias df='df --human-readable'
 alias nohup='nohup > /dev/null $1'
-alias s='sudo'
+alias s='nocorrect sudo'
 alias v='vim'
 alias sv='sudo vim'
 alias sk='sudo killall'
