@@ -19,7 +19,7 @@ if [ -f /usr/bin/grc ]; then
     alias ping='grc ping'
     alias last='grc last'
     alias netstat='grc netstat'
-    alias traceroute='grc traceroute'
+    # alias traceroute='grc traceroute'
     alias make='grc make'
     alias gcc='grc gcc'
     alias configure='grc ./configure'
@@ -61,3 +61,8 @@ alias i="grep"
 # Inline aliases, zsh -g aliases can be anywhere in command line
 alias -g G='| grep -e'
 alias -g L='| less'
+
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias pkgsearch='apt-cache search'
+alias pkginfo='dpkg -s'
+alias pkginst='dpkg --get-selections | grep'
