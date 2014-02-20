@@ -57,10 +57,11 @@ alias ifconfig="sudo ifconfig"
 alias logo="exit"
 alias ex="exit"
 alias i="grep"
+alias less='zless'
 
 # Inline aliases, zsh -g aliases can be anywhere in command line
 alias -g G='| grep -e'
-alias -g L='| less'
+alias -g L='| zless'
 
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias pkgsearch='apt-cache search'
