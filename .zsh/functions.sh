@@ -15,8 +15,7 @@ function preexec {
     esac
 }
 
-extract () 
-{
+extract () {
     echo Extracting $1 ...
     if [ -f $1 ] ; then
         case $1 in
@@ -39,8 +38,7 @@ extract ()
     fi
 } 
 
-pk () 
-{
+pk () {
     echo "Archiving $1 ..."
     if [ $1 ] ; then
         case $1 in
@@ -56,5 +54,41 @@ pk ()
     else
         echo "'$1' is not a valid file"
     fi
-} 
+}
 
+
+custom_exit() {
+    if [[ -z $TMUX ]]; then
+        builtin exit
+    else
+        real_tmux=$(whence -p tmux)
+        count=$($real_tmux list-windows &> /dev/null | wc -l)
+        if [ $count -gt 1 ]; then
+            builtin exit
+        else
+            $real_tmux detach
+        fi
+    fi
+}
+zle -N custom_exit
+
+tmux_run() {
+    me=$(whoami)
+    real_tmux=$(whence -p tmux)
+    args_num="$#"
+
+    if [ "$#" -gt 0 ]; then
+        $real_tmux "$*"
+    else
+        if [[ ! -z $TMUX ]]; then
+            $real_tmux
+        else
+            if $real_tmux has-session -t $me 2>/dev/null; then
+                $real_tmux attach-session -t $me
+            else
+                $real_tmux new -s $USER
+                    $real_tmux attach-session -t $me
+            fi
+        fi
+    fi
+}

@@ -17,3 +17,5 @@ bindkey -s '\eu' '^Ucd ..; ls^M'
 
 # Pipe the current command through less
 bindkey -s "\el" " 2>&1|less^M"
+
+bindkey '^D' custom_exit

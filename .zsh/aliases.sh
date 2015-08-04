@@ -19,7 +19,7 @@ if [ -f /usr/bin/grc ]; then
     alias ping='grc ping'
     alias last='grc last'
     alias netstat='grc netstat'
-    # alias traceroute='grc traceroute'
+    alias traceroute='grc traceroute'
     alias make='grc make'
     alias gcc='grc gcc'
     alias configure='grc ./configure'
@@ -70,3 +70,5 @@ alias pkginst='dpkg --get-selections | grep'
 alias pkgremove='sudo apt-get remove'
 alias pkgpurge='sudo apt-get purge'
 alias pkgclean='sudo apt-get autoclean'
+
+alias tmux="tmux_run"

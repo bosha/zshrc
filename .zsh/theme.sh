@@ -1,14 +1,8 @@
 #!/bin/zsh
 # vim: set filetype=zsh
 
-#PROMPT=$'%B%{\e[0;36m%}┌─[%{\e[0;33m%}%n%{\e[0;36m%}@%{\e[0;33m%}%m%{\e[0;36m%}]──(%{\e[0;33m%}%~%{\e[0;36m%})\n└─[%{\e[0;39m%}%# %{\e[0;36m%}>%b'
-#PROMPT=$'%B%{\e[0;36m%}%{\e[0;33m%}%n%{\e[0;36m%}@%{\e[0;33m%}%m%{\e[0;36m%} \e[0;33m%}%~%{\e[0;36m%}\n\e[0;39m%}\e[0;36m%} >%b '
-
-#PROMPT=$'\n\[\033[0;32m\]\u@\h \[\033[1;33m\]\w\n\[\033[0m\]> '
-
 # Change cursor color basing on vi mode
-zle-keymap-select () 
-{
+zle-keymap-select () {
     if [ $KEYMAP = vicmd ]; then
         if [[ $TMUX = '' ]]; then
             echo -ne "\033]12;Red\007"
@@ -24,16 +18,14 @@ zle-keymap-select ()
     fi
 }
 
-zle-line-finish() 
-{
+zle-line-finish() {
     if [[ $TMUX = '' ]]; then
         echo -ne "\033]12;Grey\007"
     else
         printf '\033Ptmux;\033\033]12;grey\007\033\\'
     fi
 }
-zle-line-init () 
-{
+zle-line-init () {
     zle -K viins
     echo -ne "\033]12;Grey\007"
 }
@@ -73,7 +65,7 @@ elif [[ $UID -eq 0 ]]; then # root
 fi
 
 # Check if we are on SSH or not
-if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then 
+if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
     eval PR_HOST='${PR_YELLOW}%M${PR_NO_COLOR}' #SSH
 else
     eval PR_HOST='${PR_GREEN}%M${PR_NO_COLOR}' # no SSH
@@ -84,7 +76,12 @@ local user_host='${PR_USER}${PR_CYAN}@${PR_HOST}'
 local current_dir='%{$PR_BOLD$PR_BLUE%}%~%{$PR_NO_COLOR%}'
 
 if [[ $(tty) == *pts* ]]; then
-    export TERM="xterm-256color" # 256-colour terminal 
+    export TERM="xterm-256color" # 256-colour terminal
+    if [[ -z $TMUX ]]; then
+        export TERM="screen-256color"
+    else
+        export TERM="xterm-256color" # 256-colour terminal
+    fi
     PROMPT="╭─${user_host} ${current_dir}
 ╰─$PR_PROMPT "
     RPS1="${return_code}"
