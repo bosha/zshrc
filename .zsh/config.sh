@@ -96,7 +96,7 @@ setopt IGNORE_EOF
 
 # When on remote server using SSH
 # imo - it's a great idea to always use tmux
-if [[ -z $TMUX && -n $SSH_TTU ]]; then
+if [[ -z $TMUX && -n $SSH_TTY ]]; then
     me=$(whoami)
     real_tmux=$(whence -p tmux)
     if $real_tmux has-session -t $me 2>/dev/null; then
