@@ -39,7 +39,7 @@ export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m']
+export LESS_TERMCAP_us=$'\E[01;32m'
 
 # load some modules
 autoload -U colors zsh/terminfo # Used in the colour alias below
@@ -77,7 +77,7 @@ local current_dir='%{$PR_BOLD$PR_BLUE%}%~%{$PR_NO_COLOR%}'
 
 if [[ $(tty) == *pts* ]]; then
     export TERM="xterm-256color" # 256-colour terminal
-    if [[ -z $TMUX ]]; then
+    if [[ ! -z $TMUX ]]; then
         export TERM="screen-256color"
     else
         export TERM="xterm-256color" # 256-colour terminal
