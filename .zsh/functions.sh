@@ -78,16 +78,16 @@ tmux_run() {
     args_num="$#"
 
     if [ "$#" -gt 0 ]; then
-        $real_tmux "$*"
+        TERM=screen-256color $real_tmux "$*"
     else
         if [[ ! -z $TMUX ]]; then
-            $real_tmux
+            TERM=screen-256color $real_tmux
         else
             if $real_tmux has-session -t $me 2>/dev/null; then
-                $real_tmux attach-session -t $me
+                TERM=screen-256color $real_tmux attach-session -t $me
             else
-                $real_tmux new -s $USER
-                    $real_tmux attach-session -t $me
+                TERM=screen-256color $real_tmux new -s $USER
+                TERM=screen-256color $real_tmux attach-session -t $me
             fi
         fi
     fi
