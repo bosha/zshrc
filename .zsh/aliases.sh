@@ -62,6 +62,7 @@ alias less='zless'
 # Inline aliases, zsh -g aliases can be anywhere in command line
 alias -g G='| grep -e'
 alias -g L='| zless'
+alias -g clean='egrep -v "^\s*$|^;|^\s*#'
 
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias pkgsearch='apt-cache search'
